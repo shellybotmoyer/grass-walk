@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grass Walk</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { background: #000; overflow: hidden; }
+      canvas { display: block; width: 100vw; height: 100vh; }
+
+      #overlay {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+        font-family: monospace;
+        color: #fff;
+        text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+      }
+
+      #hint {
+        background: rgba(0,0,0,0.55);
+        border: 1px solid rgba(255,255,255,0.25);
+        border-radius: 8px;
+        padding: 18px 28px;
+        text-align: center;
+        font-size: 14px;
+        line-height: 2;
+      }
+
+      #hint.hidden { display: none; }
+
+      #hint strong { font-size: 16px; display: block; margin-bottom: 6px; }
+
+      #drop-hint {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0,0,0,0.55);
+        border: 1px dashed rgba(255,255,255,0.35);
+        border-radius: 6px;
+        padding: 10px 20px;
+        font-family: monospace;
+        font-size: 13px;
+        color: rgba(255,255,255,0.7);
+        pointer-events: none;
+        text-align: center;
+      }
+
+      body.dragging #drop-hint {
+        border-color: #7df;
+        color: #7df;
+        background: rgba(0,40,80,0.7);
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+
+    <div id="overlay">
+      <div id="hint">
+        <strong>Grass Walk</strong>
+        Click to capture mouse &amp; start walking<br>
+        WASD — move &nbsp;|&nbsp; Mouse — look &nbsp;|&nbsp; Space — jump<br>
+        Esc — release mouse
+      </div>
+    </div>
+
+    <div id="drop-hint">Drop a .vrm file to load character</div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "grass-walk",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev":     "vite",
+    "build":   "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@pixiv/three-vrm": "^3.4.0",
+    "crashcat":         "^0.0.3",
+    "three":            "^0.183.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.183.0",
+    "typescript":   "^5.5.0",
+    "vite":         "^5.4.0"
+  }
+}
